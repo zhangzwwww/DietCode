@@ -1,25 +1,25 @@
 # DietCodeBERT
 
-This repo provides the code for reproducing the experiments in DietCodeBERT. DietCodeBERT is a light-weighted pre-trained model for source code.
+This repo provides the code for reproducing the experiments in DietCodeBERT ("Diet Code is Healthy: Simplifying Programs for Pre-Trained Models of Code") published at FSE 2022. DietCodeBERT is a program simplification method which aims for light-weighted leverage of pre-trained programming language models.
 
 ## Requirements
 
-* [python3](https://www.linuxbabe.com/ubuntu/install-python-3-6-ubuntu-16-04-16-10-17-04) 
-* [pytorch](https://pytorch.org/)
+* [Python3](https://www.linuxbabe.com/ubuntu/install-python-3-6-ubuntu-16-04-16-10-17-04) 
+* [PyTorch](https://pytorch.org/)
 
 ## Quick Start
 
-### Get the dataset
+### Prepare the dataset
 
-As this project conducted a empirical study on [CodeBERT](https://arxiv.org/pdf/2002.08155.pdf), we just use the dataset from CodeBERT.
+As this project conducted a empirical study on [CodeBERT](https://arxiv.org/pdf/2002.08155.pdf), we just use the same dataset as CodeBERT.
 
 The raw data can be downloaded from [CodeSearchNet](https://github.com/github/CodeSearchNet) and the preprocessed dataset can be downloaded by following the step on [CodeBERT](https://github.com/microsoft/CodeBERT/tree/master/CodeBERT).
 
-### Get the attention score of the statements
+### Obtain the attention score of statements
 
-You have to fill the java_map or python_map in each prune.py file in the downstream task folders.
+You have to fill the `java_map` or `python_map` in each `prune.py` file in the downstream task folders.
 
-Like the following code which contains the processed data of java statement attention.
+The following code provides an example which contains the processed data of java statement attention.
 ```python
 java_statement_classification_map = {
     'try': 0.0029647741585358297,
@@ -49,9 +49,9 @@ java_statement_classification_map = {
 and get the low rated attention tokens in a low_rated_tokens file which will be used to have advanced pruning after pruning the statements.
 
 
-### Get the result 
+### Reproduce the experimental results
 
-#### code search
+#### Code Search
 
 If you want to collect the attention of the tokens and statments you can add `--output_attention` when training the codesearch downstream task and the ./utils/analyse.py can help you analyse the attention to generate low_rated_tokens and statment attentions.
 
@@ -118,9 +118,9 @@ python3 run_classifier.py \
 
 and running `python3 mrr.py` to get the mrr score.
 
-#### code summary
+#### Code Summarization
 
-You can change the model_type argument from roberta to codet5 if you want to fine-tune or test from codet5 model.
+You can change the `model_type` argument from RoBERTa to CodeT5 if you want to fine-tune or test from CodeT5 model.
 
 Training:
 
