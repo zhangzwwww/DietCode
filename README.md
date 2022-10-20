@@ -1,6 +1,6 @@
-# DietCodeBERT
+# DietCode
 
-This repo provides the code for reproducing the experiments in DietCodeBERT ("Diet Code is Healthy: Simplifying Programs for Pre-Trained Models of Code") published at FSE 2022. DietCodeBERT is a program simplification method which aims for light-weighted leverage of pre-trained programming language models.
+This repo provides the code for reproducing the experiments in DietCode ("Diet Code is Healthy: Simplifying Programs for Pre-Trained Models of Code") published at FSE 2022. DietCode is a program simplification method which aims for light-weighted leverage of pre-trained programming language models.
 
 ## Requirements
 
