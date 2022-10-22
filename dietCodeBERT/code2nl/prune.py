@@ -259,7 +259,7 @@ def get_python_statement_classification(statement):
 class Code_Reduction():  # self.statement_attention: statement categories' attention. Form as:
     #      [{category: 'if statement', content: 'statement content', attention: 0.01, length: 10}]
     # self.token_attention: token attention. Form as {'a': 0.01, 'b': 0.02}
-    def __init__(self, code, lang='java', targetLength=100, **kwargs):
+    def __init__(self, code, lang='java', targetLength=150, **kwargs):
         self.code = code
         self.lang = lang
         self.targetLength = targetLength

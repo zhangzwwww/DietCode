@@ -271,12 +271,10 @@ def delete_code_pattern(code, strategy='None', lang='java', **kwargs):
         return code[:int(len(code)*rate)]
     elif strategy == 'slim':
         if lang == 'java':
-            length = 40
-            reduction = Code_Reduction(code, lang=lang, targetLength=length)
+            reduction = Code_Reduction(code, lang=lang)
             result = reduction.prune()
         elif lang == 'python':
-            length = 40
-            reduction = Code_Reduction(code, lang=lang, targetLength=length)
+            reduction = Code_Reduction(code, lang=lang)
             result = reduction.prune()
     elif strategy == 'variable':
         if lang == 'java':
