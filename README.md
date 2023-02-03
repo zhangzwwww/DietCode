@@ -19,7 +19,7 @@ The raw data can be downloaded from [CodeSearchNet](https://github.com/github/Co
 
 You have to fill the `java_map` or `python_map` in each `prune.py` file in the downstream task folders.
 
-The following code provides an example which contains the processed data of java statement attention.
+The following code provides an example which contains the processed data of java statement attention and python statement attention respectively.
 ```python
 java_statement_classification_map = {
     'try': 0.0029647741585358297,
@@ -43,6 +43,24 @@ java_statement_classification_map = {
     'setter': 0.0026460245897558608,
     'getter': 0.0025480630285627617,
     'function': 0.0027256693629142824,
+}
+```
+
+```python
+python_statement_classification_map = {
+    'try': 0.001126432983856304,
+    'break': 0.000587459733777285,
+    'finally': 0.001424176323798515,
+    'continue': 0.000525201820979588,
+    'return': 0.003557705224077524,
+    'annotation': 0.001515482513624964,
+    'while': 0.001181877585921989,
+    'for': 0.001555825490959887,
+    'if': 0.002425228787754846,
+    'expression': 0.001606519048049276,
+    'method': 0.006854916776239256,
+    'variable': 0.001436622015556903,
+    'function': 0.001785857572541693,
 }
 ```
 
