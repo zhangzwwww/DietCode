@@ -248,12 +248,12 @@ def evaluate(args, model, tokenizer, checkpoint=None, prefix="", mode='dev'):
                           'labels': batch[3]}
 
                 outputs = model(**inputs)
-                # if args.output_attention:
-                #     attentions = outputs['attentions']
-                #     tokens = []
-                #     for token in inputs['input_ids']:
-                #        tokens.append(tokenizer.convert_ids_to_tokens(token))
-                #    output_weights(attentions, tokens, output_words=False)
+                if args.output_attention:
+                    attentions = outputs['attentions']
+                    tokens = []
+                    for token in inputs['input_ids']:
+                        tokens.append(tokenizer.convert_ids_to_tokens(token))
+                    output_weights(attentions, tokens, output_words=False)
 
                 tmp_eval_loss, logits = outputs[:2]
 
